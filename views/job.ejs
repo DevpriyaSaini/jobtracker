@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Tracker</title>
+    <link rel="stylesheet" href="/views/css/saini.css">
+</head>
+<body>
+    <nav>
+        <div class="first">
+            <div class="navbar"></div>
+            <div class="heading">
+                <h1>Hello, Divyakant Saini</h1>
+                <h3>I am your job tracker</h3>
+                <h1>Job Tracker</h1>
+            </div>
+            <a  id="login" href="/login"><button>login</button></a>
+            <!-- </div>
+            </div> -->
+            <a  id="signup" href="/signup"><button>signup</button></a>
+            </div>
+            <!-- Updated form tag with action and method attributes -->
+            <form id="jobForm" action="/job/create" method="post" enctype="multipart/form-data">
+                <input type="text" id="jobTitle" name="jobTitle" placeholder="Job Title" required>
+                <input type="number" id="orderValue" name="orderValue" placeholder="Order value" required>
+                <input type="date" id="date" name="date" required>
+                <input type="file" id="file" name="file">
+               <button type="submit">Add job</button>
+            </form>            
+            <form id="searchForm">
+                <input type="text" name="query" placeholder="Search by Job Title" required>
+                <button type="submit">Search</button>
+            </form>
+            <div class="line"></div>
+            <div id="jobList">
+                
+        </div>
+    </nav>
+   
+  
+   
+
+
+
+    <script src="/views/js/script.js"></script>
+</body>
+</html>

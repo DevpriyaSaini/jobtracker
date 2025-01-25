@@ -1,0 +1,32 @@
+
+body{
+    background-color: #C1D7AE;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+input{
+    border-radius: 10px;
+    height:20px;
+    margin-top: 40px;
+}
+button{
+    
+    
+    height:30px;
+    width: 80px;
+    border-radius: 10px;
+    border:none;
+    background-color:#266960c4;
+    color:white;
+    font-weight: bolder;
+    margin:0px 10px 0 10px;
+    box-shadow: 0 0 px black;
+}
+lable{
+    font-size: larger;
+}
+h1{
+    
+    margin-bottom: 60px;;
+}
