@@ -5,13 +5,13 @@ const router = express.Router();
 router.get("/jobs", async (req, res) => {
   if (!req.user) return res.redirect("/login");
   const alljobs = await job.find({ createdBy: req.user._id });
-  return res.render("job", {
+  return res.render("index", {
     jobs: alljobs,
   });
 });
 
 router.get("/", (req, res) => {
-  return res.render("job");
+  return res.render("index");
 });
 
 router.get("/signup", (req, res) => {
