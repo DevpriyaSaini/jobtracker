@@ -18,6 +18,12 @@ const cloudinary = require("cloudinary").v2;
 const { Readable } = require("stream");
 const { log } = require("console");
 const job = require("./modles/job.js");
+const dotenv = require("dotenv");
+
+dotenv.config({
+  path: './.env'
+});
+
 const app = express();
 
 app.use(cookieParser());
