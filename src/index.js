@@ -38,14 +38,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 
-app.use((req, res, next) => {
-  res.header('Content-Type', 'text/html; charset=utf-8');
-  next();
-});
-
-
 app.set("view engine", "ejs");
-app.set('views', path.join(__dirname, '../views')); 
 
 app.use('/public', express.static('public'))
 
