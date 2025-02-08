@@ -1,5 +1,5 @@
 async function getAllJobs() {
-  const res = await fetch("http://localhost:3000/job/get-all-jobs");
+  const res = await fetch("/job/get-all-jobs");
 
   const data = await res.json();
 
@@ -43,7 +43,7 @@ const initializeFunctionality = () => {
       const jobId = jobdiv.getAttribute("id");
       
       if (confirm("Are you sure you want to delete this job?")) {
-        const res = await fetch("http://localhost:3000/delete", {
+        const res = await fetch("/delete", {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
@@ -83,7 +83,7 @@ const initializeFunctionality = () => {
         date,
         jobId,
       };
-      const res = await fetch("http://localhost:3000/update", {
+      const res = await fetch("/update", {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -108,7 +108,7 @@ async function searchJobs(event) {
   }
 
   try {
-    const res = await fetch(`http://localhost:3000/job?query=${query}`);
+    const res = await fetch(`/job?query=${query}`);
     console.log(res)
     if (!res.ok) throw new Error("Failed to search jobs");
 
