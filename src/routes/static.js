@@ -11,8 +11,7 @@ router.get("/jobs", async (req, res) => {
 });
 
 router.get("/", (req, res) => {
-  // res.render("index");
-  res.send('Hello')
+  res.render("index");
 });
 
 router.get("/signup", (req, res) => {
