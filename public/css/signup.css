@@ -22,11 +22,17 @@ button{
     font-weight: bolder;
     margin:0px 10px 0 10px;
     box-shadow: 0 0 px black;
+    margin-top: 20px;
 }
-lable{
-    font-size: larger;
-}
+
 h1{
     
     margin-bottom: 60px;;
+}
+
+@media (width < 768px) {
+    .input-field {
+        display: flex;
+        gap: 5px;
+    }
 }

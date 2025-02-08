@@ -9,13 +9,18 @@
 <body>
     <h1>signup</h1>
     <form action="/signup" method="post">
-        <lable> Full name </lable>
-        <input type="text" required name="name">
-        <lable> email </lable>
+        <div class="input-field">
+            <lable>Full Name</lable>
+            <input type="text" required name="name">
+        </div>
+        <div class="input-field">
+            <lable>Email</lable>
         <input type="text" required name="email">
-        <lable> password </lable>
-        <input type="text" required name="password">
-       
+        </div>
+        <div class="input-field">
+            <lable>Password</lable>
+            <input type="text" required name="password">
+        </div>
         
         <button type="submit">signup</button>
     </form>

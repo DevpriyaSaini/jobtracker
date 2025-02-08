@@ -136,13 +136,16 @@ function renderJobs(jobs){
 
     job.innerHTML = `
         <div class="job" id=${j._id}>
-            <div> ${j.jobTitle}</div>
-            <div>${j.orderValue}</div>
-            <div><a href=${j.fileUrl}>fileUrl</a>
+            <div class="dets">
+              <div> ${j.jobTitle}</div>
+              <div>${j.orderValue}</div>
+              <div><a href=${j.fileUrl}>fileUrl</a></div>
+              <div>${j.date}</div>
             </div>
-            <div>${j.date}</div>
-            <button class="delete">Delete</button>
-            <button class="edit">Edit</button>
+            <div class="btns">
+              <button class="delete">Delete</button>
+              <button class="edit">Edit</button>
+            </div>
         </div>
         `;
 
