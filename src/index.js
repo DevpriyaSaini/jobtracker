@@ -183,6 +183,7 @@ app.get("/job", async (req, res) => {
     }
 
     const jobs = await Job.find({
+      createdBy: req.user._id,
       jobTitle: { $regex: query, $options: "i" }, // Case-insensitive search
     });
 
