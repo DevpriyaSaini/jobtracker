@@ -46,7 +46,7 @@ app.use('/public', express.static('public'))
 // app.use(staticrouter);
 
 app.get('/', (req, res) => {
-  return res.render('views')
+  res.render('index')
 })
 
 //posting the data
