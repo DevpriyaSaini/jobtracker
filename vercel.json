@@ -13,6 +13,9 @@
         },
         {
             "src": "/(.*)",
+            "headers": {
+                "Content-Type": "text/html; charset=utf-8"
+            },
             "dest": "src/index.js"
         }
     ]
