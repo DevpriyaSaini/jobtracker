@@ -4,20 +4,20 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const fs = require("fs");
 const cors = require("cors");
-const staticrouter = require("./src/routes/static.js");
+const staticrouter = require("./routes/static.js");
 const {
   restrictToLoggedinUserOnly,
   checkAuth,
-} = require("./src/middleware/auth.js");
+} = require("./middleware/auth.js");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
-const jobRouter = require("./src/routes/job.js");
-const { register, loginuser } = require("./usercontroler.js");
-const Job = require("./src/modles/job.js");
+const jobRouter = require("./routes/job.js");
+const { register, loginuser } = require("../usercontroler.js");
+const Job = require("./modles/job.js");
 const cloudinary = require("cloudinary").v2;
 const { Readable } = require("stream");
 const { log } = require("console");
-const job = require("./src/modles/job.js");
+const job = require("./modles/job.js");
 const app = express();
 
 app.use(cookieParser());
