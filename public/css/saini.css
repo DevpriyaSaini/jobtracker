@@ -199,7 +199,7 @@ button{
 }
 
 @media (width < 768px) {
-    .jobList {
+    .job {
         display: flex;
         gap: 10px;
     }
