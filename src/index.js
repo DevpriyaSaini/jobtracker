@@ -144,7 +144,9 @@ async function editjob(req, res) {
         orderValue,
         date,
       },
-      console.log("job updated")
+      {
+        new: true
+      }
     );
 
     return res.status(200).json({ msg: "user updated" });
