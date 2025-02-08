@@ -188,13 +188,18 @@ async function connectdb() {
     const connect = await mongoose.connect(
       "mongodb+srv://devpriyasaini:Anilsaini70177@cluster01.kzupp.mongodb.net/Cluster01"
     );
+
+    app.on('error', (error) => {
+      console.log('Error E:', error);
+      throw error;
+    })
+
+    app.listen(PORT, () => {
+      console.log(`Server running at http://localhost:${PORT});`);
+    });
     console.log("mongo connected");
   } catch (error) {
     console.log(error);
   }
 }
 connectdb();
-
-app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT});`);
-});
