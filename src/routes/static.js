@@ -16,17 +16,20 @@ router.get("/jobs", async (req, res) => {
 router.get("/", async(req, res) => {
   const token = req.cookies?.token;
 
+
     let userId;
 
     if(token) userId = jwt.verify(token, secret);
+   
 
-    const user = await User.findById(userId?.id);
+    const user = await User.findById(userId?._id);
+   
 
     res.locals.user = user;
 
  
   res.render("index",{
-    user:user,
+    user:res.locals.user,
   });
 });
 
