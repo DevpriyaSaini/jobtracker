@@ -84,7 +84,7 @@ const initializeFunctionality = () => {
         jobId,
       };
       const res = await fetch("/update", {
-        method: "P ",
+        method: "PATCH",
         headers: {
           "Content-Type": "application/json",
         },
