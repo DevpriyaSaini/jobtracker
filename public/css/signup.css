@@ -34,5 +34,10 @@ h1{
     .input-field {
         display: flex;
         gap: 5px;
+        margin: 10px 0;
+    }
+    
+    input {
+        margin: 0;
     }
 }

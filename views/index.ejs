@@ -12,21 +12,20 @@
             <div class="navbar"></div>
             <div class="heading">
                 <h1>Hello, Divyakant Saini</h1>
-                <h3>I am your job tracker</h3>
-                <h1>Job Tracker</h1>
             </div>
             <% if (!locals.user) { %>
                 <a  id="login" href="/login"><button>login</button></a>
-                <!-- </div>
-                </div> -->
-                <a  id="signup" href="/signup"><button>signup</button></a>
-              <% } else { %>
-                <a  id="logout" href="/logout"><button>logout</button></a>
-              <% } %>
-              
-             
-          
-            </div>
+            <!-- </div>
+        </div> -->
+        <a  id="signup" href="/signup"><button>signup</button></a>
+        <% } else { %>
+            <a  id="logout" href="/logout"><button>logout</button></a>
+            <% } %>
+            
+            
+            
+        </div>
+        <h1>Job Tracker</h1>
             <!-- Updated form tag with action and method attributes -->
             <form id="jobForm" action="/job/create" method="post" enctype="multipart/form-data">
                 <input type="text" id="jobTitle" name="jobTitle" placeholder="Job Title" required>
