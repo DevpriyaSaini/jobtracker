@@ -132,10 +132,15 @@ app.delete("/delete", deletejob);
 //editing job
 
 async function editjob(req, res) {
-  const { jobTitle, orderValue, date } = req.body;
-  if (!jobTitle || !orderValue || !date) {
+  const { jobTitle, orderValue, date, jobId } = req.body;
+  if (!jobTitle || !orderValue || !date || !jobId) {
     return res.redirect("/");
   }
+
+  console.log('jobTitle =', jobTitle);
+  console.log('orderValue =', orderValue);
+  console.log('date =', date);
+  console.log('jobId =', jobId);
   try {
     const result = await job.findByIdAndUpdate(
       req.body.jobId,
