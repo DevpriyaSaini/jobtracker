@@ -1,5 +1,5 @@
 const job = require("../modles/job.js");
-const user = require("../usercontroler.js");
+const user = require("../../usercontroler.js");
 
 async function getAllUserJobs(req, res) {
   if (!req.user) return res.redirect("/login");

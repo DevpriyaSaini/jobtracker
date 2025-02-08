@@ -1,5 +1,5 @@
 const user = require("./usermodles.js");
-const { setUser } = require("./service/auth");
+const { setUser } = require("./src/service/auth.js");
 
 async function register(req, res) {
   const { name, email, password } = req.body;
