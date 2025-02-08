@@ -204,4 +204,10 @@ button{
         flex-direction: column;
         gap: 10px;
     }
+
+    .job .dets {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
