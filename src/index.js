@@ -43,7 +43,7 @@ app.set("view engine", "ejs");
 
 app.use('/public', express.static('public'))
 
-app.use("/", staticrouter);
+app.use(staticrouter);
 
 //posting the data
 
