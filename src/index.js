@@ -169,6 +169,12 @@ app.post("/signup", register);
 app.post("/login", loginuser);
 
 
+
+app.get("/logout",(req,res)=>{
+  return res.clearCookie("token").redirect("/");
+})
+
+
 app.get("/job", async (req, res) => {
   try {
     const {query} = req.query;

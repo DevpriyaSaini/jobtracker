@@ -1,7 +1,7 @@
 const express = require("express");
 const job = require("../modles/job.js");
 const router = express.Router();
-
+const User = require("../../usermodles.js");
 router.get("/jobs", async (req, res) => {
   if (!req.user) return res.redirect("/login");
   const alljobs = await job.find({ createdBy: req.user._id });
@@ -10,8 +10,21 @@ router.get("/jobs", async (req, res) => {
   });
 });
 
-router.get("/", (req, res) => {
-  res.render("index");
+router.get("/", async(req, res) => {
+  const token = req.cookies?.token;
+
+    let userId;
+
+    if(token) userId = jwt.verify(token, secret);
+
+    const user = await User.findById(userId?.id);
+
+    res.locals.user = user;
+
+ 
+  res.render("index",{
+    user:user,
+  });
 });
 
 router.get("/signup", (req, res) => {

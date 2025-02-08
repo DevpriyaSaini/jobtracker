@@ -89,7 +89,12 @@ const initializeFunctionality = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
+       
       });
+      if(res.status==200)
+      {
+        alert("job updated sucessfully!")
+      }
 
       console.log("res", res);
     });

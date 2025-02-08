@@ -10,7 +10,9 @@ async function register(req, res) {
       password: password,
     });
     console.log(create);
-    return res.redirect("/");
+    return res
+    .cookie("token", token)
+    .redirect("/");
   } catch (error) {
     console.log(error);
     return res.status(400).json({ msg: "error is found! duplicate key is used eamil"});
