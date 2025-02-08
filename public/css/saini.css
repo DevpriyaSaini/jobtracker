@@ -201,6 +201,7 @@ button{
 @media (width < 768px) {
     .job {
         display: flex;
+        flex-direction: column;
         gap: 10px;
     }
 }
