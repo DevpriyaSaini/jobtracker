@@ -3,6 +3,8 @@ const job = require("../modles/job.js");
 const router = express.Router();
 const User = require("../../usermodles.js");
 const jwt = require("jsonwebtoken");
+const secret = "devpriya$123@";
+
 router.get("/jobs", async (req, res) => {
   if (!req.user) return res.redirect("/login");
   const alljobs = await job.find({ createdBy: req.user._id });
@@ -16,7 +18,7 @@ router.get("/", async(req, res) => {
 
     let userId;
 
-    if(token) userId = JsonWebTokenError.verify(token, secret);
+    if(token) userId = jwt.verify(token, secret);
 
     const user = await User.findById(userId?.id);
 
