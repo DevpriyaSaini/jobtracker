@@ -9,10 +9,11 @@ async function register(req, res) {
       email: email,
       password: password,
     });
+    console.log(create);
     return res.redirect("/");
   } catch (error) {
     console.log(error);
-    return res.status(400).json({ msg: "error is found!" });
+    return res.status(400).json({ msg: "error is found! duplicate key is used eamil"});
   }
 }
 

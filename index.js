@@ -78,7 +78,7 @@ app.post("/job/create", checkAuth, upload.single("file"), async (req, res) => {
           createdBy: req.user._id,
         });
 
-        console.log({ "job created": newJob });
+       
 
         // Save to MongoDB
         await newJob.save();
@@ -174,7 +174,7 @@ app.get("/job", async (req, res) => {
 
 
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 async function connectdb() {
   try {
     const connect = await mongoose.connect(
