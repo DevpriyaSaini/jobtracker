@@ -19,6 +19,7 @@ const { Readable } = require("stream");
 const { log } = require("console");
 const job = require("./modles/job.js");
 const dotenv = require("dotenv");
+const { errorHandler } = require("./middleware/errorHanlder.js");
 
 dotenv.config({
   path: './.env'
@@ -177,7 +178,7 @@ app.get("/job", async (req, res) => {
 });
 
 
-
+app.use(errorHandler);
 
 
 
