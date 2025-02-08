@@ -9,7 +9,9 @@ async function register(req, res) {
       email: email,
       password: password,
     });
-    console.log(create);
+    
+    const token = setUser(create);
+
     return res
     .cookie("token", token)
     .redirect("/");
