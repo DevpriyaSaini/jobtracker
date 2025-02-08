@@ -80,6 +80,14 @@ button{
    
    
 }
+#logout  button{
+    margin-right: 30px;
+    margin-top: 30px;
+    width: 90px;
+    height:50px
+   
+   
+}
 #signup button{
     margin-right: 30px;
     margin-top: 30px;
