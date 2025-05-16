@@ -139,11 +139,7 @@ async function editjob(req, res) {
     return res.redirect("/");
   }
 
-  console.log('jobTitle =', jobTitle);
-  console.log('jobDisc =', jobDisc);
-  console.log('orderValue =', orderValue);
-  console.log('date =', date);
-  console.log('jobId =', jobId);
+  
   try {
     const result = await job.findByIdAndUpdate(
       req.body.jobId,
