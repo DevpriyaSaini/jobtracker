@@ -19,8 +19,8 @@ async function getAllJobs() {
             <div><a href=${j.fileUrl}>fileUrl</a>
             </div>
             <div>${j.date}</div>
-            <button class="delete">Delete</button>
-            <button class="edit">Edit</button>
+              <button class="delete">Delete</button>
+              <button class="edit">Edit</button>
         </div>
         `;
 

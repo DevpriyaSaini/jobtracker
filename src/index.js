@@ -114,8 +114,20 @@ app.post("/job/create", checkAuth, upload.single("file"), async (req, res) => {
 //deleteing job
 
 async function deletejob(req, res) {
- 
+ const jobId=req.body.jobId;
+
   try {
+    const existingJob = await job.findById(jobId);
+    
+    if (!existingJob) {
+      return res.status(404).json({ msg: "Job not found" });
+    }
+
+    
+    // More defensive check
+    if (!existingJob.createdBy || existingJob.createdBy.toString() !== req.user._id.toString()) {
+      return res.json({ msg: "You can only update jobs you created" });
+    }
     const result = await Job.findByIdAndDelete(req.body.jobId);
 
     if (!result) {
@@ -129,18 +141,26 @@ async function deletejob(req, res) {
   }
 }
 
-app.delete("/delete", deletejob);
+app.delete("/delete",checkAuth, deletejob);
 
 //editing job
 
-async function editjob(req, res) {
+async function editjob(req,res) {
   const { jobTitle,jobDisc, orderValue,  orderNumber,date, jobId } = req.body;
-  if (!jobTitle||!jobDisc || !orderValue || !orderNumber|| !date || !jobId) {
+  if (!jobTitle ||!jobDisc || !orderValue ||!orderNumber || !date || !jobId) {
     return res.redirect("/");
   }
-
-  
   try {
+    const existingJob = await job.findById(jobId);
+    
+    if (!existingJob) {
+      return res.status(404).json({ msg: "Job not found" });
+    }
+    
+    // More defensive check
+    if (!existingJob.createdBy || existingJob.createdBy.toString() !== req.user._id.toString()) {
+      return res.status(403).json({ msg: "You can only update jobs you created" });
+    }
     const result = await job.findByIdAndUpdate(
       req.body.jobId,
       {
@@ -162,7 +182,7 @@ async function editjob(req, res) {
   }
 }
 
-app.patch("/update", editjob);
+app.patch("/update",checkAuth, editjob);
 
 app.use("/job", checkAuth, jobRouter);
 
@@ -184,11 +204,12 @@ app.get("/job", async (req, res) => {
     }
 
     const jobs = await Job.find({
-      createdBy: req.user._id,
+      // createdBy: req.user._id,
       jobTitle: { $regex: query, $options: "i" }, // Case-insensitive search
     });
-
-    res.json({ jobs });
+    const currentUserId=req.user._id;
+    console.log(currentUserId);
+    res.json({ jobs,currentUserId});
   } catch (error) {
     console.error("Error searching jobs:", error.message);
     res.status(500).json({ message: "Internal server error" });

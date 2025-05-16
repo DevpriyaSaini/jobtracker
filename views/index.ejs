@@ -11,7 +11,7 @@
         <div class="first">
             <div class="navbar"></div>
             <div class="heading">
-                <h1>Hello, Divyakant Saini</h1>
+                <h1>Hello, <% if (locals.user) { %><%= locals.user.name %><% } %></h1>
             </div>
             <% if (!locals.user) { %>
                 <a  id="login" href="/login"><button>login</button></a>
