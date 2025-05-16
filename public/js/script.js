@@ -13,7 +13,9 @@ async function getAllJobs() {
     job.innerHTML = `
         <div class="job" id=${j._id}>
             <div> ${j.jobTitle}</div>
+            <div> ${j.jobDisc}</div>
             <div>${j.orderValue}</div>
+            <div>${j.orderNumber}</div>
             <div><a href=${j.fileUrl}>fileUrl</a>
             </div>
             <div>${j.date}</div>
@@ -74,12 +76,16 @@ const initializeFunctionality = () => {
      
 
       const jobTitle = prompt("Edit job title:");
+      const jobDisc = prompt("Edit job Disc:");
       const orderValue = prompt("Edit job salary:");
+      const orderNumber = prompt("Edit job number:");
       const date = prompt("Edit job date:");
 
       const data = {
         jobTitle,
+        jobDisc,
         orderValue,
+        orderNumber,
         date,
         jobId,
       };
@@ -138,7 +144,9 @@ function renderJobs(jobs){
         <div class="job" id=${j._id}>
             <div class="dets">
               <div> ${j.jobTitle}</div>
+              <div> ${j.jobDisc}</div>
               <div>${j.orderValue}</div>
+              <div>${j.orderNumber}</div>
               <div><a href=${j.fileUrl}>fileUrl</a></div>
               <div>${j.date}</div>
             </div>

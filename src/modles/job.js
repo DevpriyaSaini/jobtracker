@@ -4,7 +4,15 @@ const schema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  jobDisc: {
+    type: String,
+    required: true,
+  },
   orderValue: {
+    type: Number,
+    required: true,
+  },
+  orderNumber: {
     type: Number,
     required: true,
   },

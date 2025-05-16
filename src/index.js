@@ -62,9 +62,9 @@ const upload = multer({ storage: storage });
 app.post("/job/create", checkAuth, upload.single("file"), async (req, res) => {
   
   try {
-    const { jobTitle, orderValue, date } = req.body;
+    const { jobTitle, jobDisc,orderValue, orderNumber,date } = req.body;
 
-    if (!jobTitle || !date || !req.file) {
+    if (!jobTitle ||!jobDisc||!orderValue||!orderNumber|| !date || !req.file) {
       return res.json({ msg: "all feilds are required!" });
     }
 
@@ -83,7 +83,9 @@ app.post("/job/create", checkAuth, upload.single("file"), async (req, res) => {
         // Create a new Job document
         const newJob = new Job({
           jobTitle,
+          jobDisc,
           orderValue,
+          orderNumber,
           date,
           fileUrl: result.secure_url,
           fileType: req.file.mimetype,
@@ -132,12 +134,13 @@ app.delete("/delete", deletejob);
 //editing job
 
 async function editjob(req, res) {
-  const { jobTitle, orderValue, date, jobId } = req.body;
-  if (!jobTitle || !orderValue || !date || !jobId) {
+  const { jobTitle,jobDisc, orderValue,  orderNumber,date, jobId } = req.body;
+  if (!jobTitle||!jobDisc || !orderValue || !orderNumber|| !date || !jobId) {
     return res.redirect("/");
   }
 
   console.log('jobTitle =', jobTitle);
+  console.log('jobDisc =', jobDisc);
   console.log('orderValue =', orderValue);
   console.log('date =', date);
   console.log('jobId =', jobId);
@@ -146,7 +149,9 @@ async function editjob(req, res) {
       req.body.jobId,
       {
         jobTitle,
+        jobDisc,
         orderValue,
+        orderNumber,
         date,
       },
       {
