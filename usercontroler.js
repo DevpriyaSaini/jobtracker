@@ -20,7 +20,7 @@ async function sendmail(name, email, token) {
       from: 'devpriyasaini6@gmail.com',
       to: email,
       subject: 'Password Reset Request',
-      html: `<p>Hi ${name}, please copy the token <a href="#">${token}</a> and paste it into token input field to reset your password !</p>`
+      html: `<p>Hi ${name}, please copy the token :-<br>${token} <br> and paste it into token input field to reset your password !</p>`
     };
     const info = await transporter.sendMail(mailOptions);
     console.log('Email sent:', info.response);
@@ -109,9 +109,7 @@ async function forgetpass(req, res) {
 
 async function resetpass(req, res) {
   try {
-     
     const { newPassword, confirmPassword,token} = req.body;
-
     // Check if required fields exist
     if (!newPassword || !confirmPassword ||!token) {
       return res.status(400).json({
