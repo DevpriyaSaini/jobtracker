@@ -2,7 +2,7 @@ const user = require("./usermodles.js");
 const { setUser } = require("./src/service/auth.js");
 const nodemailer = require("nodemailer");
 const randomstring = require("randomstring");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 require('dotenv').config();
 
 // Email transporter configuration
