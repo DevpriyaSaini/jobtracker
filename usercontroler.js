@@ -20,7 +20,7 @@ async function sendmail(name, email, token) {
       from: 'devpriyasaini6@gmail.com',
       to: email,
       subject: 'Password Reset Request',
-      html: `<p>Hi ${name}, please copy the token :-<br>${token} <br> and paste it into token input field to reset your password !</p>`
+      html: `<p>Hi ${name}, please copy the token and paste it into token input field to reset your password !<br> ${token}</p>`
     };
     const info = await transporter.sendMail(mailOptions);
     console.log('Email sent:', info.response);
