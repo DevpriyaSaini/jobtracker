@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/css/login.css">
+</head>
+<body>
+    <h1>Reset your password</h1>
+    <form action="/reset-password" method="post">
+        <label>New password</label>
+        <input type="password" required name="newPassword">
+        <label>Confirm password</label>
+        <input type="password" required name="confirmPassword">
+        <label>Enter token (check Email)</label>
+        <input type="string" required name="token">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

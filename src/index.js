@@ -12,7 +12,7 @@ const {
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 const jobRouter = require("./routes/job.js");
-const { register, loginuser } = require("../usercontroler.js");
+const { register, loginuser, forgetpass,resetpass } = require("../usercontroler.js");
 const Job = require("./modles/job.js");
 const cloudinary = require("cloudinary").v2;
 const { Readable } = require("stream");
@@ -24,6 +24,8 @@ const { errorHandler } = require("./middleware/errorHanlder.js");
 dotenv.config({
   path: './.env'
 });
+
+
 
 const app = express();
 
@@ -181,6 +183,12 @@ async function editjob(req,res) {
     return res.json({ msg: "error to update user" });
   }
 }
+async function forgetp(req,res){
+  return res.render('forget');
+}
+async function resetp(req,res){
+  return res.render('reset');
+}
 
 app.patch("/update",checkAuth, editjob);
 
@@ -188,6 +196,11 @@ app.use("/job", checkAuth, jobRouter);
 
 app.post("/signup", register);
 app.post("/login", loginuser);
+app.get('/forget',forgetp);
+app.get(`/api/reset-password`,resetp);
+
+app.post('/forget-password',forgetpass);
+app.post('/reset-password',resetpass)
 
 
 
