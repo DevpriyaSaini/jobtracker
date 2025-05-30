@@ -1,149 +1,36 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
     background-color: #C1D7AE;
+    line-height: 1.6;
 }
 
+/* Form Styles */
 form {
     margin-bottom: 20px;
 }
 
 input {
     margin-right: 10px;
-    height:30px;
+    height: 30px;
     width: 300px;
     margin-bottom: 10px;
     border-radius: 10px;
-    border:none;
-    padding-left: 5px;
-    box-sizing: border-box;
-}
-input:hover{
-    border: 2px solid rgba(0, 0, 0, 0.582);
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#joblist li {
-    padding-right: 500px;
-}
-button{
-    height:30px;
-    width: 80px;
-    border-radius: 10px;
-    border:none;
-    background-color:#266960c4;
-    color:white;
-    font-weight: bolder;
-    margin:0px 10px 0 10px;
-    box-shadow: 0 0 px black;
-}
-
-.heading{
-    text-align: center;
-    width: 80%;
-    
-    
-}
-
-.line {
-    height: 1px;
-    width: 100%;
-    background-color: gray;
-    opacity: 0.4;
-    margin: 20px 0px 20px 0px;
-}
-#file{
-    background-color: white;
-    /* display:flex; */
-    padding-top: 3px;
+    border: none;
     padding-left: 10px;
-    
-
-}
-#file input{
-    border:none;
-    border-radius: 10px;
-
-}
-.first{
-    display: flex;
-}
-/* #login  button{
-    margin-right: 30px;
-    margin-top: 30px;
-    width: 90px;
-    height:50px
-   
-   
-} */
-/* #logout  button{
-    margin-right: 30px;
-    margin-top: 30px;
-    width: 90px;
-    height:50px
-   
-   
-} */
-/* #signup button{
-    margin-right: 30px;
-    margin-top: 30px;
-    width: 90px;
-    height:50px
-    
-} */
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: #C1D7AE;
-}
-
-form {
-    margin-bottom: 20px;
-}
-
-input {
-    margin-right: 10px;
-    height:30px;
-    width: 300px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    border:none;
-    padding-left: 5px;
     box-sizing: border-box;
+    transition: all 0.2s ease;
 }
-input:hover{
+
+input:hover {
     border: 2px solid rgba(0, 0, 0, 0.582);
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#joblist li {
-    padding-right: 500px;
-}
-button{
-    height:30px;
-    width: 80px;
-    border-radius: 10px;
-    border:none;
-    background-color:#266960c4;
-    color:white;
-    font-weight: bolder;
-    margin:0px 10px 0 10px;
-    box-shadow: 0 0 px black;
-}
-
-.heading{
+/* Utility Classes */
+.heading {
     text-align: center;
     width: 90%;
-    
 }
 
 .line {
@@ -151,68 +38,308 @@ button{
     width: 100%;
     background-color: gray;
     opacity: 0.4;
-    margin: 20px 0px 20px 0px;
+    margin: 20px 0;
 }
-#file{
-    background-color: white;
-    /* display:flex; */
-    padding-top: 3px;
-    padding-left: 10px;
-    
 
+.first {
+    display: flex;
+    align-items: center;
 }
-#file input{
-    border:none;
+
+/* Button Styles */
+button {
+    height: 30px;
+    width: 80px;
     border-radius: 10px;
-
+    border: none;
+    background-color: #266960c4;
+    color: white;
+    font-weight: bold;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
-.first{
-    display: flex;
-}
-/* #login button {
-    margin-right: 30px;
-    margin-top: 30px;
-    width: 90px;
-    height:50px
-   
-   
-} */
 
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* Job Listing Styles */
 #jobList {
-    height: 20vw;
-    display: flex;
-    flex-direction: column;
-    gap: 1vw;
+    list-style-type: none;
+    padding: 0;
 }
 
 .job {
-    min-height: 50px;
     background-color: white;
-    padding: 2vw;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 1vw;
-    border-radius: 10px;
-    padding: 10px;
+    transition: all 0.3s ease;
 }
 
-@media (width < 768px) {
+.job:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dets {
+    flex: 1;
+}
+
+.dets div {
+    margin-bottom: 8px;
+}
+
+.dets div:first-child {
+    font-weight: bold;
+    color: #2c3e50;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.dets div:nth-child(2) {
+    color: #555;
+    margin-bottom: 12px;
+}
+
+.dets div:nth-child(3),
+.dets div:nth-child(4) {
+    color: #3498db;
+    font-weight: 500;
+}
+
+.dets a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.dets a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+.btns {
+    display: flex;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+.btns button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.delete {
+    background-color: #e74c3c;
+}
+
+.delete:hover {
+    background-color: #c0392b;
+}
+
+.edit {
+    background-color: #f39c12;
+}
+
+.edit:hover {
+    background-color: #d35400;
+}
+
+/* File Input Styles */
+#file {
+    background-color: white;
+    padding: 3px 0 3px 10px;
+}
+
+#file input {
+    border: none;
+    border-radius: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
     .job {
-        display: flex;
         flex-direction: column;
-        gap: 10px;
+        align-items: flex-start;
     }
+    
+    .btns {
+        margin-left: 0;
+        margin-top: 15px;
+        width: 100%;
+        justify-content: flex-end;
+    }
+    
+    input {
+        width: 100%;
+        margin-right: 0;
+    }
+}
 
-    .job .dets {
-        display: flex;
-        flex-direction: row;
+@media (max-width: 480px) {
+    .btns {
         justify-content: space-between;
-        align-items: center;
     }
+    
+    .btns button {
+        width: 48%;
+        padding: 10px;
+    }
+    
+    body {
+        margin: 10px;
+    }
+}
 
-    .job .btns {
-        display: inline;
-    }
+
+
+
+
+/* Job List Container */
+#jobList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Individual Job Card */
+.job {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 15px;
+  transition: all 0.3s ease;
+}
+
+.job:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Job Details Section */
+.job > div:not(:last-child):not(:nth-last-child(2)) {
+  grid-column: 1;
+}
+
+.job > div:first-child {
+  font-weight: bold;
+  color: #2c3e50;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  grid-column: 1 / -1;
+}
+
+.job > div:nth-child(2) {
+  color: #555;
+  margin-bottom: 10px;
+  grid-column: 1 / -1;
+  line-height: 1.5;
+}
+
+.job > div:nth-child(3) {
+  color: #3498db;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.job > div:nth-child(4) {
+  color: #666;
+}
+
+.job > div:nth-child(5) a {
+  color: #3498db;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.job > div:nth-child(5) a:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}
+
+.job > div:nth-child(6) {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+/* Action Buttons */
+.job > button {
+  grid-column: 2;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  height: fit-content;
+  align-self: center;
+}
+
+.job > .delete {
+  background-color: #e74c3c;
+  color: white;
+  grid-row: 3;
+}
+
+.job > .edit {
+  background-color: #f39c12;
+  color: white;
+  grid-row: 4;
+}
+
+.job > .delete:hover {
+  background-color: #c0392b;
+}
+
+.job > .edit:hover {
+  background-color: #d35400;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .job {
+    grid-template-columns: 1fr;
+  }
+  
+  .job > button {
+    grid-column: 1;
+    grid-row: auto;
+    /* width: 100%; */
+    margin-top: 5px;
+  }
+  
+  .job > .delete {
+    grid-row: auto;
+  }
+  
+  .job > .edit {
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .job {
+    padding: 15px;
+  }
+  
+  .job > div:nth-child(3),
+  .job > div:nth-child(4),
+  .job > div:nth-child(5),
+  .job > div:nth-child(6) {
+    margin-bottom: 5px;
+  }
 }

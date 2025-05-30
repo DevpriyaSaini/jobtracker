@@ -7,15 +7,18 @@
     <link rel="stylesheet" href="/public/css/login.css">
 </head>
 <body>
-    <h1>Reset your password</h1>
+    <div class="card">
+       <h1>Reset your password</h1>
     <form action="/reset-password" method="post">
         <label>New password</label>
         <input type="password" required name="newPassword">
         <label>Confirm password</label>
         <input type="password" required name="confirmPassword">
         <label>Enter token (check Email)</label>
-        <input type="string" required name="token">
+        <input type="text" required name="token">
         <button type="submit">Submit</button>
     </form>
+    </div>
+   
 </body>
 </html>

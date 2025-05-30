@@ -4,26 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/public/css/login.css">
+    <link rel="stylesheet" href="/public/css/signup.css">
 </head>
 <body>
-    <h1>signup</h1>
-    <form action="/signup" method="post">
-        
-            <lable>Full Name</lable>
+   
+    <div class="card">
+         <h1>signup</h1>
+     <form action="/signup" method="post">
+        <div class="label1">
+         <lable>Full Name</lable>
             <input type="text" required name="name">
+        </div>
+        
+            <div class="label2">
+               <lable>Email</lable>
+        <input type="text" required name="email">
+            </div>
       
         
-            <lable>Email</lable>
-        <input type="text" required name="email">
-       
-        
-            <lable>Password</lable>
+           <div class="label3">
+
+             <lable>Password</lable>
             <input type="password" required name="password">
+           </div>
+         
+        
+         <div class="label4">
+            <button type="submit">signup</button>
+         </div>  
        
         
-        <button type="submit">signup</button>
+        
     </form>
+     
+    </div>
+    
     
 </body>
 </html>

@@ -7,15 +7,25 @@
     <link rel="stylesheet" href="/public/css/login.css">
 </head>
 <body>
-    <h1>Login</h1>
+    <div class="card">
+<h1>Login</h1>
     <form action="/login" method="post">
-        <lable> email </lable>
+        <div class="label1">
+            <lable> email </lable>
         <input type="text" required name="email">
-        <lable> password </lable>
+        </div>
+
+        <div class="label2">
+           <lable> password </lable>
         <input type="password" required name="password">
+        </div>
+       
+       
         <button type="submit">login</button>
     </form>
     <a id="forget" href="forget">forget password</a>
+    </div>
+    
     
 </body>
 </html>
