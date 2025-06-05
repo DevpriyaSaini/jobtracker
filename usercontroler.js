@@ -20,7 +20,7 @@ async function sendmail(name, email, token) {
       from: 'devpriyasaini6@gmail.com',
       to: email,
       subject: 'Password Reset Request',
-      html: `<p>Hi ${name}, please copy the token and paste it into token input field to reset your password !<br> ${token}</p>`
+      html: `<p>Hi ${name}, To reset your password, please copy the One-Time Password (OTP) below and paste it into the OTP input field:<br> ${token}</p>`
     };
     const info = await transporter.sendMail(mailOptions);
     console.log('Email sent:', info.response);
@@ -90,7 +90,7 @@ async function forgetpass(req, res) {
       return res.status(400).json({ msg: "Email not found" });
     }
 
-    const resetToken = randomstring.generate();
+    const resetToken = randomstring.generate({ length: 5, charset: 'numeric' });
     const tokenExpiry = Date.now() + 360; // 1 hour expiry
 
     await user.updateOne(
